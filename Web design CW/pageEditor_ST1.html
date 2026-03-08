@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Editor – Student 1 | Life on Land</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main {
+      padding: 40px 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #2e7d32;
+      margin-top: 30px;
+      border-bottom: 2px solid #8bc34a;
+      padding-bottom: 8px;
+    }
+    ul {
+      margin-left: 30px;
+      line-height: 1.8;
+    }
+    li a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    li a:hover {
+      text-decoration: underline;
+      color: #33691e;
+    }
+    p {
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+    section {
+      background: #ffffff;
+      border: 1px solid #d0e8c4;
+      border-left: 6px solid #8bc34a;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin-top: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .editor-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      background: #f1f8e9;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 30px 0 10px 0;
+      font-size: 1.05em;
+      border: 1.5px solid #c5e1a5;
+    }
+    .editor-toc a {
+      color: #388e3c;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .editor-toc a:hover,
+    .editor-toc a:focus {
+      color: #1b5e20;
+      text-decoration: underline;
+      outline: none;
+    }
+    .top-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #8bc34a;
+      color: #fff;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      transition: background-color 0.3s;
+      z-index: 1300;
+    }
+    .top-btn:hover,
+    .top-btn:focus {
+      background: #388e3c;
+      outline: none;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #666;
+      font-size: 1em;
+    }
+    @media (max-width: 700px) {
+      main { padding: 18px 4vw; }
+      .editor-toc { flex-direction: column; gap: 8px; }
+      section { padding: 14px 8px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/logo1.png" alt="Life on Land logo: tree and nature symbol" class="logo">
+      <h1>Life on Land</h1>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <a href="home.html">Home</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="table.html">Table</a>
+      <a href="profile.html">Profile</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="content.html">Content</a>
+      <a href="team.html">Team</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p><strong>Name:</strong> Venuja Hansith</p>
+      <p><strong>Role:</strong> Student 1</p>
+      <p><strong>Student ID:</strong> w2149607</p>
+      <p>This page describes my contributions, technical decisions, and lessons learned for the Life on Land project.</p>
+    </section>
+
+    <section id="tasks">
+      <h2>Completed Tasks / Pages</h2>
+      <ul>
+        <li><a href="index.html" target="_blank" rel="noopener">Splash Screen</a></li>
+        <li><a href="volunteer.html" target="_blank" rel="noopener">Volunteer Page</a></li>
+        <li><a href="content_ST1.html" target="_blank" rel="noopener">Content Page</a></li>
+      </ul>
+      <p>Below I describe the techniques, standards, and accessibility features used for each page.</p>
+    </section>
+
+    <section id="tech">
+      <h2>Technical Description</h2>
+      
+      <h3>Splash Screen (index.html)</h3>
+      <ul>
+        <li>Uses a <code>&lt;meta http-equiv="refresh"&gt;</code> tag to automatically redirect users to the home page after a short delay, simulating a splash/landing experience.</li>
+        <li>Animated CSS loader implemented with <code>@keyframes</code> for a smooth, modern loading effect.</li>
+        <li>Floating logo uses CSS <code>animation</code> and <code>box-shadow</code> for visual engagement.</li>
+        <li>Team member cards are laid out using CSS Flexbox for responsive alignment and spacing.</li>
+        <li>Semantic HTML5 structure (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) for accessibility and SEO.</li>
+        <li>Accessible skip link for keyboard users to jump directly to main content.</li>
+        <li>All images include descriptive <code>alt</code> text for screen readers.</li>
+        <li>Responsive design with <code>@media</code> queries for mobile and desktop compatibility.</li>
+      </ul>
+      
+      <h3>Volunteer Page (volunteer.html)</h3>
+      <ul>
+        <li>Volunteer opportunities are displayed as horizontally scrollable cards using CSS Flexbox and <code>overflow-x: auto</code> for mobile-friendly navigation.</li>
+        <li>Each card includes an image, title, description, and a "Join Now" button that triggers a modal popup with dynamic content.</li>
+        <li>Popup modal is implemented with JavaScript and ARIA roles for accessibility, including keyboard navigation and focus trap.</li>
+        <li>Modal form uses <code>&lt;label&gt;</code> elements for all inputs, and validates required fields before submission.</li>
+        <li>Emoji-based rating system for user feedback, with live character count and a 200-character limit enforced via <code>maxlength</code> and JavaScript.</li>
+        <li>Feedback form provides real-time validation, confirmation messages, and resets on cancel or submit.</li>
+        <li>All interactive elements are accessible by keyboard and provide visible focus styles.</li>
+        <li>Responsive design ensures usability on all devices, with modal and cards adapting to screen size.</li>
+        <li>Scroll lock is applied to the body when the modal is open to prevent background scrolling.</li>
+        <li>ARIA attributes and roles are used for improved screen reader support.</li>
+      </ul>
+      
+      <h3>Content Page (content_ST1.html)</h3>
+      <ul>
+        <li>Uses internal anchor links and section IDs for easy navigation within the page.</li>
+        <li>Content is organized into semantic sections with clear headings (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>).</li>
+        <li>Images include descriptive <code>alt</code> text and are styled with CSS for visual consistency.</li>
+        <li>Sticky "Go to Top" button implemented with <code>position: fixed</code> for improved usability.</li>
+        <li>Consistent color palette and spacing achieved using CSS variables and utility classes.</li>
+        <li>Responsive layout adapts to different screen sizes using <code>@media</code> queries.</li>
+        <li>All navigation and interactive elements are accessible by keyboard and screen readers.</li>
+        <li>Page structure and content validated using W3C HTML and CSS validators.</li>
+      </ul>
+    </section>
+
+    <section id="challenges">
+      <h2>Challenges &amp; Lessons Learned</h2>
+      <p>
+        One challenge was debugging responsive Flexbox layouts and ensuring animations worked smoothly across browsers. I learned to use browser dev tools and test on multiple devices.
+      </p>
+      <p>
+        Merging code with teammates sometimes caused version conflicts. This taught me to communicate more and commit changes carefully.
+      </p>
+      <p>
+        I also improved my understanding of semantic HTML and accessibility, especially for forms and navigation.
+      </p>
+      <p>
+        Integrating dynamic JavaScript features, such as modals and emoji-based ratings, required careful event handling and accessibility considerations. I learned to use ARIA roles and keyboard navigation to make interactive elements usable for all.
+      </p>
+      <p>
+        Ensuring consistent styling across all browsers was a challenge, especially with custom components like popups and feedback forms. I learned to use CSS resets and test on different platforms.
+      </p>
+      <p>
+        Managing and validating user input, such as character limits and required fields, helped me understand the importance of real-time feedback and error handling in web forms.
+      </p>
+      <p>
+        Adhering to Janet regulations and web accessibility standards made me more aware of legal and ethical responsibilities in web development.
+      </p>
+      <p>
+        Finally, balancing visual design with accessibility (such as color contrast and focus indicators) taught me to prioritize both aesthetics and usability for all users.
+      </p>
+    </section>
+
+    <section id="access">
+      <h2>Accessibility Highlights</h2>
+      <ul>
+        <li>All images include descriptive <code>alt</code> text for screen readers.</li>
+        <li>Semantic HTML elements (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>footer</code>) used throughout.</li>
+        <li>Color palette chosen for sufficient contrast (meets WCAG guidelines).</li>
+        <li>Keyboard navigation supported with logical tab order and visible focus styles.</li>
+        <li>Form elements have associated <code>label</code> tags for accessibility.</li>
+      </ul>
+    </section>
+
+    <section id="compliance">
+      <h2>Compliance with Janet Regulations</h2>
+      <ul>
+        <li>All pages use valid HTML5 and CSS3, passing W3C validation.</li>
+        <li>Alternative text provided for all images.</li>
+        <li>No personal data is collected; copyright and privacy respected.</li>
+        <li>Navigation is clear and consistent across all pages.</li>
+      </ul>
+    </section>
+
+    <section id="refs">
+      <h2>References &amp; Image Credits</h2>
+      <ul>
+        <li>W3Schools. <a href="https://www.w3schools.com/" target="_blank" rel="noopener">HTML &amp; CSS Tutorials</a></li>
+        <li>MDN Web Docs. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">HTML Reference</a></li>
+        <li>WCAG 2.1 Guidelines. <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener">Web Content Accessibility Guidelines</a></li>
+        <li>Janet Web Publishing Guidelines. <a href="https://community.jisc.ac.uk/library/network-and-technology-policies/guide-filtering-janet" target="_blank" rel="noopener">Jisc Janet Policies</a></li>
+        <li>Web Design and Development Module Lecture Notes. Accessed, 2025.</li>
+        <li>iStockPhoto (royalty-free images)<a href="https://www.istockphoto.com/" target="_blank" rel="noopener">HTML &amp; istock Images</a></li>
+      </ul>
+    </section>
+
+    <section id="validation" style="margin-top: 50px; padding: 20px; background: #e8f5e9; border-radius: 10px; border: 2px solid #66bb6a;">
+      <h2>Validation Evidence</h2>
+      <p>
+        All my pages pass W3C HTML and CSS validation. See the <a href="validation_ST1.html" target="_blank" rel="noopener">Validation Page</a> for screenshots and details.
+      </p>
+    </section>
+  </main>
+
+  <!-- Back to top button -->
+  <a href="#top" class="top-btn" aria-label="Back to top">↑</a>
+
+  <footer>
+    <p>&copy; 2025 Life on Land SDG 15 Project — Student 1 | Venuja Hansith &nbsp;|&nbsp; <a href="home.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Agriculture – Life on Land</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f8e9;
+      color: #333;
+    }
+
+    .content-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: #fff;
+      width: 240px;
+      padding: 30px 20px;
+      border-right: 2px solid #c5e1a5;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .sidebar h3 {
+      font-size: 1rem;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 12px 0;
+      color: #2e7d32;
+      text-decoration: none;
+      font-size: 1rem;
+      padding-left: 12px;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar a:hover {
+      border-left: 3px solid #8bc34a;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 50px;
+      background: #f9fff9;
+    }
+
+    section {
+      margin-bottom: 70px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #2e7d32;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #8bc34a;
+      padding-bottom: 8px;
+    }
+
+    .content-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .content-row img {
+      width: 500px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #c8e6c9;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .side-text {
+      flex: 1;
+    }
+
+    .side-text h3 {
+      font-size: 1.3rem;
+      color: #4caf50;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .side-text p, .side-text ul, .additional-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #4caf50;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/logo1.png" alt="Life on Land logo: tree and nature symbol" class="logo">
+      <h1>Life on Land</h1>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <a href="home.html">Home</a>
+      <a href="volunteer.html" >Volunteer</a>
+      <a href="table.html">Table</a>
+      <a href="profile.html">Profile</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="content.html" class="active">Content</a>
+      <a href="team.html">Team</a>
+    </nav>
+  </header>
+
+  <!--main content wrapper-->
+  <div class="content-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Explore Topics</h3>
+      <a href="#overview">Overview</a>
+      <a href="#methods">Green Agriculture Methods</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#communities">Community Role</a>
+    </aside>
+
+    <!-- Main Sections -->
+    <main class="main-content">
+
+      <section id="overview">
+        <h2>Overview of Green Agriculture - Student 1</h2>
+        <div class="content-row">
+          <img src="images/land1.jpg" alt="Green agriculture landscape with crops and trees">
+          <div class="side-text">
+            <h3>What is Green Agriculture?</h3>
+            <p>
+              Green agriculture is an approach to farming that prioritizes environmental sustainability, biodiversity, and the health of both people and the planet. It emphasizes eco-friendly practices such as organic farming, crop rotation, composting, and reduced use of chemical fertilizers and pesticides.
+            </p>
+            <p>
+              By working with nature rather than against it, green agriculture helps preserve soil fertility, conserve water, and protect wildlife habitats. This approach is essential for ensuring food security and combating the negative impacts of conventional industrial agriculture.
+            </p>
+          </div>
+        </div>
+        <div class="additional-content">
+          <h3>Why Shift to Green Agriculture?</h3>
+          <p>
+            Traditional farming methods often lead to soil degradation, water pollution, and loss of biodiversity. Green agriculture offers a sustainable alternative that supports healthy ecosystems, reduces greenhouse gas emissions, and produces nutritious food for communities.
+          </p>
+        </div>
+      </section>
+
+      <section id="methods">
+        <h2>Green Agriculture Methods</h2>
+        <div class="content-row">
+          <img src="images/community.jpg" alt="Farmers practicing crop rotation and composting">
+          <div class="side-text">
+            <h3>Key Sustainable Practices</h3>
+            <ul>
+              <li><strong>Crop Rotation:</strong> Alternating crops each season to maintain soil nutrients and reduce pests.</li>
+              <li><strong>Composting:</strong> Recycling organic waste to enrich soil naturally and reduce landfill use.</li>
+              <li><strong>Organic Farming:</strong> Avoiding synthetic chemicals and GMOs, relying on natural fertilizers and pest control.</li>
+              <li><strong>Agroforestry:</strong> Integrating trees and shrubs into farmland to improve biodiversity and soil health.</li>
+              <li><strong>Water Conservation:</strong> Using drip irrigation, mulching, and rainwater harvesting to minimize water waste.</li>
+              <li><strong>Integrated Pest Management:</strong> Combining biological, cultural, and mechanical methods to control pests with minimal chemical use.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-content">
+          <p>
+            These methods not only protect the environment but also increase farm resilience to climate change and extreme weather events.
+          </p>
+        </div>
+      </section>
+
+      <section id="benefits">
+        <h2>Benefits of Green Agriculture</h2>
+        <div class="content-row">
+          <img src="images/forest.jpg" alt="Healthy green farm with diverse crops">
+          <div class="side-text">
+            <h3>Environmental and Social Advantages</h3>
+            <ul>
+              <li><strong>Biodiversity:</strong> Supports a wide range of plants, animals, and beneficial insects.</li>
+              <li><strong>Soil Health:</strong> Prevents erosion, improves fertility, and increases carbon storage.</li>
+              <li><strong>Cleaner Water:</strong> Reduces runoff of harmful chemicals into rivers and lakes.</li>
+              <li><strong>Climate Action:</strong> Lowers greenhouse gas emissions and helps farms adapt to changing conditions.</li>
+              <li><strong>Healthier Food:</strong> Produces crops with fewer chemical residues and higher nutritional value.</li>
+              <li><strong>Economic Opportunities:</strong> Opens new markets for organic and sustainably grown products.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-content">
+          <p>
+            Green agriculture is a win-win for people and the planet, ensuring long-term productivity and well-being for future generations.
+          </p>
+        </div>
+      </section>
+
+      <section id="communities">
+        <h2>The Role of Communities</h2>
+        <div class="content-row">
+          <img src="images/garden.jpg" alt="Community garden with people working together">
+          <div class="side-text">
+            <h3>Empowering Local Farmers</h3>
+            <ul>
+              <li><strong>Community Gardens:</strong> Bring people together to grow food sustainably and share knowledge.</li>
+              <li><strong>Farmer Cooperatives:</strong> Enable smallholders to access resources, training, and fair markets.</li>
+              <li><strong>Education & Outreach:</strong> Spread awareness of sustainable practices and their benefits.</li>
+              <li><strong>Local Food Systems:</strong> Reduce food miles and strengthen community resilience.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="additional-content">
+          <p>
+            When communities embrace green agriculture, they build healthier environments, stronger economies, and a more secure food future for all.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!--back to top button-->
+  <a href="#top" class="go-top" title="Back to top">↑</a>
+
+  <!--footer-->
+  <footer>
+    <p>&copy; 2025 Life on Land | <a href="pageEditor_ST1.html">Page Editor - Student 1 | Venuja Hansith</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* ==== Global Reset & Base Styles ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4fdf4;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #388e3c;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      background-color: #ffffff;
+    }
+
+    .logo-container h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #d0f0c0;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s, background 0.3s;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .main-nav a:hover, .main-nav a.active {
+      background-color: #2e7d32;
+      color: #ffffff;
+    }
+
+/* ==== Navigation Bar ==== */
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.main-nav a:hover {
+  background-color: #558b2f;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-nav a.active {
+  background-color: #33691e;
+}
+
+/* ==== Tiles / Cards ==== */
+.container {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.tiles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.tile {
+  width: 220px;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tile img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.tile p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ==== Footer ==== */
+footer {
+  background-color: #8bc34a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}

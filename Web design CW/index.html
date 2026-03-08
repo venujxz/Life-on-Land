@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="4; url=home.html">
+  <title>Life on Land - SDG 15</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/main1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .overlay {
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: #fffde7;
+      color: #2e7d32;
+      padding: 8px 16px;
+      z-index: 1000;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: left 0.2s;
+    }
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 1100px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(139, 195, 74, 0.7);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      color: #a5d6a7;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .mission {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #dcedc8;
+      margin-bottom: 25px;
+      max-width: 700px;
+      margin-inline: auto;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #8bc34a;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .redirecting {
+      color: #c8e6c9;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .team-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      color: #333;
+      width: 200px;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .card:focus-within, .card:hover {
+      transform: translateY(-6px);
+      outline: 2px solid #8bc34a;
+    }
+
+    .card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #8bc34a;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 5px 0;
+      font-size: 1.1rem;
+      color: #2e7d32;
+    }
+
+    .card small {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      margin: 0 6px;
+      color: #8bc34a;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .social a:focus, .social a:hover {
+      color: #558b2f;
+      outline: 2px solid #8bc34a;
+      border-radius: 50%;
+    }
+
+    .attribution {
+      margin-top: 30px;
+      font-size: 0.95em;
+      color: #c8e6c9;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="overlay" id="main-content">
+    <img src="images/logo1.png" alt="Life on Land Logo" class="logo">
+    <h1>Life on Land (SDG 15)</h1>
+    <p class="mission"><strong>Mission:</strong> Protecting, restoring, and promoting sustainable ecosystems, managing forests, and halting biodiversity loss through global awareness and local action.</p>
+    
+    <div class="loader" aria-hidden="true"></div>
+    <span class="visually-hidden" role="status" aria-live="polite">Loading spinner</span>
+    <p class="redirecting">Redirecting to Home in a few seconds...</p>
+    <div class="team-cards" role="group" aria-label="Team Members">
+  <div class="card" tabindex="0">
+    <img src="images/venuja.jpg" alt="Venuja, Student 1">
+    <h3>Venuja</h3>
+    <small>Student 1</small>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <div class="card" tabindex="0">
+    <img src="images/aqeel.jpg" alt="Aqeel, Student 2">
+    <h3>Aqeel</h3>
+    <small>Student 2</small>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <div class="card" tabindex="0">
+    <img src="images/dilakshan.jpg" alt="Dilakshan, Student 3">
+    <h3>Dilakshan</h3>
+    <small>Student 3</small>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <div class="card" tabindex="0">
+    <img src="images/shehan.jpg" alt="Shehan, Student 4">
+    <h3>Shehan</h3>
+    <small>Student 4</small>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+    
+    <div class="attribution">
+      <strong>Page Author:</strong> Venuja Hansith (w2149607)<br>
+      <strong>Validated:</strong> W3C HTML &amp; CSS | <strong>Accessibility:</strong> Semantic HTML, alt text, keyboard navigation<br>
+      <strong>Compliance:</strong> Janet web publishing guidelines
+    </div>
+  </div>
+  </div>
+</body>
+</html>

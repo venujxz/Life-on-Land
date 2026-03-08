@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer - Life on Land</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f9f4;
+      color: #333;
+    }
+
+    .container {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    .volunteer-section {
+  margin-top: 30px;
+  overflow-x: auto;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.volunteer-card {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-5px);
+}
+
+.volunteer-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.volunteer-card h3 {
+  margin-top: 0;
+  color: #388e3c;
+  text-align: center;
+}
+
+.volunteer-card p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.volunteer-card button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.volunteer-card button:hover {
+  background: #388e3c;
+}
+
+.dropdown-container {
+  text-align: right;
+  margin: 10px 0;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+    /* Reviews Section */
+    .reviews-section {
+      position: relative;
+      margin-top: 40px;
+      padding: 60px 10%;
+      background: url('images/main.jpg') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .reviews-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+      z-index: 0;
+    }
+
+    .reviews-section h2,
+    .reviews-section .rating-summary {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews-section h2{
+    
+        color: white;
+    }
+
+    .review-cards {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .review-card {
+      flex: 0 0 300px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      scroll-snap-align: start;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .review-cards::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .review-cards::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 4px;
+    }
+
+    .review-card h4 {
+      margin: 0 0 10px;
+      color: #2e7d32;
+    }
+
+    .review-card a {
+      color: #4caf50;
+      text-decoration: none;
+    }
+
+    .review-meta {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 10px;
+    }
+
+
+    .rating-summary {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+  
+    /* Feedback Form */
+    .feedback-form {
+      margin-top: 60px;
+      background: #e8f5e9;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .feedback-form textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .emoji-rating {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .emoji-rating span {
+      font-size: 1.8rem;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: transform 0.2s;
+    }
+
+    .emoji-rating span:hover {
+      transform: scale(1.2);
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .form-buttons button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .submit-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .cancel-btn {
+      background-color: #aaa;
+      color: white;
+    }
+
+    .cancel-btn:hover {
+      background-color: #888;
+    }
+
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 350px;         /* Reduced width */
+      margin: 60px auto;        /* Less margin for smaller screens */
+      border-radius: 12px;
+      padding: 16px;            /* Reduced padding */
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.4s ease;
+    }
+    .modal-content img {
+      width: 100%;
+      max-height: 140px;        /* Limit image height */
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    @media (max-width: 400px) {
+      .modal-content {
+        max-width: 98vw;
+        margin: 10vw auto;
+        padding: 8px;
+      }
+      .modal-content img {
+        max-height: 80px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .popup-details {
+      margin-top: 15px;
+    }
+
+    .icon-row {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+    }
+
+    .icon-row i {
+      font-size: 1.2rem;
+      color: #2e7d32;
+      display: block;
+      text-align: center;
+    }
+
+    .icon-row span {
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    .next-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      float: right;
+      width: 100%;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .form-slide {
+      display: none;
+      animation: slideIn 0.4s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .form-slide input, .form-slide textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form-slide button {
+      background: #388e3c;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      background: url('images/forest3.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner h1 {
+      color: white;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/logo1.png" alt="Life on Land logo: tree and nature symbol" class="logo">
+      <h1>Life on Land</h1>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <a href="home.html">Home</a>
+      <a href="volunteer.html" class="active">Volunteer</a>
+      <a href="table.html">Table</a>
+      <a href="profile.html">Profile</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="content.html">Content</a>
+      <a href="team.html">Team</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Volunteering Opportunities for you</h1>
+  </div>
+
+  <main class="container">
+    <h2>Volunteering Opportunities</h2>
+
+    <div class="dropdown-container">
+      <label for="sort">Sort by: </label>
+      <select id="sort">
+        <option>Most Popular</option>
+        <option>Newest</option>
+        <option>Location</option>
+      </select>
+    </div>
+
+  <div class="volunteer-section">
+  <div class="volunteer-card">
+    <img src="images/forest1.jpg" alt="Forest Clean-up">
+    <h3>Forest Clean-Up Drive</h3>
+    <p>Join our weekend clean-up to protect biodiversity hotspots.</p><br>
+    <button onclick="openPopup('forest')">Join Now</button>
+  </div>
+  <div class="volunteer-card">
+    <img src="images/treeplanting.jpg" alt="Tree Planting">
+    <h3>Urban Tree Planting</h3>
+    <p>Help us increase urban canopy cover by planting native trees.</p><br>
+    <button onclick="openPopup('tree')">Join Now</button>
+  </div>
+  <div class="volunteer-card">
+    <img src="images/wildlifemonitor.jpg" alt="Wildlife Monitoring">
+    <h3>Wildlife Monitoring</h3>
+    <p>Assist experts in tracking and documenting local species.</p><br>
+    <button onclick="openPopup('wildlife')">Join Now</button>
+  </div>
+  <div class="volunteer-card">
+    <img src="images/beachcleanup.jpg" alt="Beach Clean-Up">
+    <h3>Beach Clean-Up</h3>
+    <p>Join hands to remove plastic from our coastal ecosystems.</p><br>
+    <button onclick="openPopup('beach')">Join Now</button>
+  </div>
+  <div class="volunteer-card">
+    <img src="images/garden.jpg" alt="Community Garden">
+    <h3>Community Garden</h3>
+    <p>Support sustainable food by volunteering in community gardens.</p><br>
+    <button onclick="openPopup('garden')">Join Now</button>
+  </div>
+  <div class="volunteer-card">
+    <img src="images/educate.webp" alt="Eco Education">
+    <h3>Eco-Education Outreach</h3>
+    <p>Teach students about biodiversity and conservation efforts.</p>
+    <button onclick="openPopup('education')">Join Now</button>
+  </div>
+</div>
+<br><br><br>
+
+
+     <section class="reviews-section">
+      <h2>User Ratings & Reviews</h2>
+      <p class="rating-summary">9.4/10 Exceptional — based on 284 reviews</p>
+
+      <div class="review-cards">
+      <div class="review-card">
+        <h4>“Inspiring and Impactful!”</h4>
+        <p>Planting trees with the team made me feel like I was truly making a difference for the planet. <a href="#">See More</a></p>
+        <p class="review-meta">— Priya S., March 2025</p>
+      </div>
+      <div class="review-card">
+        <h4>“Fun and Educational”</h4>
+        <p>The Eco-Education Outreach helped me learn so much about biodiversity and how to protect it. <a href="#">See More</a></p>
+        <p class="review-meta">— Alex J., February 2025</p>
+      </div>
+      <div class="review-card">
+        <h4>“Great Community Spirit”</h4>
+        <p>Volunteering at the community garden brought our neighborhood together and taught us about sustainable food. <a href="#">See More</a></p>
+        <p class="review-meta">— Fatima R., January 2025</p>
+      </div>
+      <div class="review-card">
+        <h4>“Eye-Opening Experience”</h4>
+        <p>Monitoring wildlife gave me a new appreciation for local species and the importance of conservation. <a href="#">See More</a></p>
+        <p class="review-meta">— Ben T., December 2024</p>
+      </div>
+      <div class="review-card">
+        <h4>“Making a Real Difference”</h4>
+        <p>The beach clean-up was hard work but seeing the results was so rewarding. <a href="#">See More</a></p>
+        <p class="review-meta">— Maya L., November 2024</p>
+      </div>
+      <div class="review-card">
+        <h4>“Highly Recommend!”</h4>
+        <p>Joining the Forest Clean-Up Drive was a fantastic way to meet new people and help the environment. <a href="#">See More</a></p>
+        <p class="review-meta">— Daniel K., October 2024</p>
+      </div>
+    </div>
+    </section>
+
+    <section class="feedback-form">
+    <h2>Share Your Experience</h2>
+    <div class="emoji-rating" aria-label="Rate your experience" role="radiogroup">
+      <span role="radio" aria-checked="false" tabindex="0" aria-label="Very Bad">😞</span>
+      <span role="radio" aria-checked="false" tabindex="0" aria-label="Bad">😐</span>
+      <span role="radio" aria-checked="false" tabindex="0" aria-label="Okay">🙂</span>
+      <span role="radio" aria-checked="false" tabindex="0" aria-label="Good">😊</span>
+      <span role="radio" aria-checked="false" tabindex="0" aria-label="Excellent">😍</span>
+    </div>
+    <textarea id="review-text" rows="5" maxlength="200" placeholder="Write your review here... (max 200 characters)"></textarea>
+    <div style="text-align:right; font-size:0.95em; color:#388e3c;">
+      <span id="char-count">0</span>/200
+    </div>
+    <div class="form-buttons">
+      <button class="submit-btn">Submit Feedback</button>
+      <button class="cancel-btn">Cancel</button>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Life on Land Team | <a href="pageEditor_ST1.html">Page Editor – Student 1 | Venuja Hansith</a></p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="popup" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closePopup()">&times;</span>
+    <div id="infoSlide">
+      <img id="popup-img" src="images/default.jpg" alt="Popup Image" style="display:none;">
+      <div class="popup-details">
+        <h3 id="popup-title">&nbsp;</h3>
+        <div class="icon-row" id="popup-icons"></div>
+        <p id="popup-desc"></p><br>
+        <button class="next-button" onclick="showForm()">Next</button>
+      </div>
+    </div>
+    <div id="formSlide" class="form-slide">
+      <h3>Sign Up to Volunteer</h3>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+      <textarea rows="4" placeholder="Why do you want to join?"></textarea>
+      <button onclick="closePopup()">Submit</button>
+    </div>
+  </div>
+</div>
+
+  <script>
+const popupData = {
+  forest: {
+    img: "images/forest1.jpg",
+    title: "Forest Clean-Up Drive",
+    icons: `
+      <div><i class="fa-solid fa-clock"></i><span>4 hrs</span></div>
+      <div><i class="fa-solid fa-leaf"></i><span>Eco Action</span></div>
+      <div><i class="fa-solid fa-users"></i><span>Community</span></div>
+    `,
+    desc: "Join our initiative to clean and preserve our natural forests. Volunteers will be guided by experts and gear will be provided."
+  },
+  tree: {
+    img: "images/treeplanting.jpg",
+    title: "Urban Tree Planting",
+    icons: `
+      <div><i class="fa-solid fa-tree"></i><span>3 hrs</span></div>
+      <div><i class="fa-solid fa-city"></i><span>Urban</span></div>
+      <div><i class="fa-solid fa-seedling"></i><span>Reforestation</span></div>
+    `,
+    desc: "Help us plant native trees in city parks and streets. All ages welcome, tools and saplings provided. Make your city greener!"
+  },
+  wildlife: {
+    img: "images/wildlifemonitor.jpg",
+    title: "Wildlife Monitoring",
+    icons: `
+      <div><i class="fa-solid fa-binoculars"></i><span>5 hrs</span></div>
+      <div><i class="fa-solid fa-paw"></i><span>Wildlife</span></div>
+      <div><i class="fa-solid fa-book"></i><span>Research</span></div>
+    `,
+    desc: "Assist experts in tracking and documenting local animal species. Learn field techniques and contribute to real conservation science."
+  },
+  beach: {
+    img: "images/beachcleanup.jpg",
+    title: "Beach Clean-Up",
+    icons: `
+      <div><i class="fa-solid fa-water"></i><span>3 hrs</span></div>
+      <div><i class="fa-solid fa-trash"></i><span>Clean-Up</span></div>
+      <div><i class="fa-solid fa-umbrella-beach"></i><span>Coastal</span></div>
+    `,
+    desc: "Help remove plastic and debris from our beaches. Protect marine life and enjoy a day by the sea with fellow volunteers."
+  },
+  garden: {
+    img: "images/garden.jpg",
+    title: "Community Garden",
+    icons: `
+      <div><i class="fa-solid fa-seedling"></i><span>2 hrs</span></div>
+      <div><i class="fa-solid fa-people-group"></i><span>Community</span></div>
+      <div><i class="fa-solid fa-carrot"></i><span>Gardening</span></div>
+    `,
+    desc: "Support sustainable food by helping in our community gardens. Learn about organic growing and share harvests with neighbors."
+  },
+  education: {
+    img: "images/educate.webp",
+    title: "Eco-Education Outreach",
+    icons: `
+      <div><i class="fa-solid fa-chalkboard-teacher"></i><span>2 hrs</span></div>
+      <div><i class="fa-solid fa-children"></i><span>Students</span></div>
+      <div><i class="fa-solid fa-leaf"></i><span>Awareness</span></div>
+    `,
+    desc: "Teach students about biodiversity, conservation, and sustainability. Materials and training provided. Inspire the next generation!"
+  }
+};
+
+function openPopup(task) {
+  const data = popupData[task];
+  document.getElementById("popup-img").src = data.img;
+  document.getElementById("popup-img").alt = data.title + " image";
+  document.getElementById("popup-title").textContent = data.title;
+  document.getElementById("popup-icons").innerHTML = data.icons;
+  document.getElementById("popup-desc").textContent = data.desc;
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("infoSlide").style.display = "block";
+  document.getElementById("formSlide").style.display = "none";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+function showForm() {
+  document.getElementById("infoSlide").style.display = "none";
+  document.getElementById("formSlide").style.display = "block";
+}
+
+// Optional: Close modal when clicking outside the modal content
+window.onclick = function(event) {
+  const modal = document.getElementById("popup");
+  if (event.target === modal) {
+    closePopup();
+  }
+}
+const emojis = document.querySelectorAll('.emoji-rating span');
+let selectedEmoji = null;
+
+emojis.forEach((emoji, idx) => {
+  emoji.addEventListener('click', () => {
+    emojis.forEach(e => {
+      e.style.transform = 'scale(1)';
+      e.setAttribute('aria-checked', 'false');
+    });
+    emoji.style.transform = 'scale(1.4)';
+    emoji.setAttribute('aria-checked', 'true');
+    selectedEmoji = idx;
+  });
+  emoji.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      emoji.click();
+    }
+  });
+});
+  const reviewText = document.getElementById('review-text');
+  const charCount = document.getElementById('char-count');
+  reviewText.addEventListener('input', function() {
+    charCount.textContent = this.value.length;
+});
+</script>
+
+
+</body>
+</html>
